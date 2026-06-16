@@ -4,7 +4,7 @@ import sys
 from approvaltests import verify
 from texttest_fixture import main
 
-def test_gilded_rose_approvals():
+def Test_Approvals():
     orig_sysout = sys.stdout
     try:
         fake_stdout = io.StringIO()
@@ -18,4 +18,4 @@ def test_gilded_rose_approvals():
     verify(answer)
 
 if __name__ == "__main__":
-    test_gilded_rose_approvals()
+    Test_Approvals()
