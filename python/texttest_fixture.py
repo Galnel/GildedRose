@@ -2,7 +2,8 @@
 from __future__ import print_function
 
 from gilded_rose import GildedRose
-from GildedRose.python.Utilities.item import Item
+# from GildedRose.python.Utilities.item import Item
+from .Utilities import Item
 import sys
 
 

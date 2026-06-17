@@ -10,3 +10,13 @@ class AgedBrie(Item):
     """
     def __init__(self, name, sell_in, quality) -> None:
         super().__init__(name, sell_in, quality)
+        
+    def update_quality(self):
+        
+        if self.sell_in >= 0:
+            self.quality = self.quality + 1
+        else:
+            self.quality = min(50, self.quality + 2)
+            
+        self.sell_in = self.sell_in - 1
+        
