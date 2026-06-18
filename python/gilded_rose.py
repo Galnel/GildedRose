@@ -1,5 +1,15 @@
 # -*- coding: utf-8 -*-
-from .Utilities import Item, AgedBrie, BackstagePass, NormalItem, Sulfuras, Conjured
+
+from pathlib import Path
+import sys 
+
+#Correção de diretório absoluto.
+utilities_abs_dir = Path("GildedRose/python/Utilities").resolve()
+sys.path.append(utilities_abs_dir)
+
+from Utilities import Item, AgedBrie, BackstagePass, NormalItem, Sulfuras, Conjured
+
+
 
 class GildedRose(object):
 

@@ -1,10 +1,12 @@
 # -*- coding: utf-8 -*-
 from __future__ import print_function
-
 from gilded_rose import GildedRose
-# from GildedRose.python.Utilities.item import Item
-from .Utilities import Item
 import sys
+from pathlib import Path
+
+utilities_abs_dir = Path("GildedRose/python/Utilities").resolve()
+sys.path.append(utilities_abs_dir)
+from Utilities import Item
 
 
 def main():

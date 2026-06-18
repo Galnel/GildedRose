@@ -1,8 +1,12 @@
 import io
 import sys
+from pathlib import Path
 
-from approvaltests import verify
+sys.path.append(str(Path(__file__).parent.parent))
+
 from texttest_fixture import main
+from approvaltests import verify
+
 
 def Test_Approvals():
     orig_sysout = sys.stdout
