@@ -34,4 +34,5 @@ class NormalItem(Item):
             self.quality = max(0, self.quality - 1)
         else:
             self.quality = max(0, self.quality - 2)
+
         self.sell_in -= 1

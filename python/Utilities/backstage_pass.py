@@ -30,7 +30,7 @@ class BackstagePass(Item):
         """Atualiza a qualidade e os dias restantes para o evento.
 
         Regras:
-            - Se o evento já ocorreu (sell_in <= 0), a qualidade se
+            - Se o evento já ocorreu (sell_in < 0), a qualidade se
               torna 0.
             - Se faltam 5 dias ou menos, a qualidade aumenta em 3.
             - Se faltam entre 6 e 10 dias, a qualidade aumenta em 2.
@@ -39,15 +39,26 @@ class BackstagePass(Item):
             - Ao final da atualização, sell_in é decrementado em 1.
         """
 
+        """self.sell_in -= 1
+
+        if self.sell_in < 0:
+            self.quality = 0
+        elif self.sell_in <= 5:
+            self.quality = min(50, self.quality + 3)
+        elif self.sell_in <= 10:
+            self.quality = min(50, self.quality + 2)
+        else:
+            self.quality = min(50, self.quality + 1)"""
+        
         if self.sell_in <= 0:
             self.quality = 0
         elif self.sell_in <= 5:
-            self.quality += 3
+            self.quality = min(50, self.quality + 3)
         elif self.sell_in <= 10:
-            self.quality += 2
+            self.quality = min(50, self.quality + 2)
         else:
-            self.quality += 1
+            self.quality = min(50, self.quality + 1)
 
-        self.quality = min(50, self.quality)
         self.sell_in -= 1
+
             

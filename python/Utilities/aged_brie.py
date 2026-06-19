@@ -32,12 +32,13 @@ class AgedBrie(Item):
               em 2.
             - A qualidade não pode ultrapassar 50.
             - Ao final da atualização, ``sell_in`` é decrementado em 1.
-        """
-        
-        if self.sell_in >= 0:
-            self.quality = min(50, self.quality + 1)
-        else:
+        """ 
+
+        if self.sell_in <= 0:
             self.quality = min(50, self.quality + 2)
+        else:
+            self.quality = min(50, self.quality + 1)
+
+        self.sell_in -= 1 
             
-        self.sell_in = self.sell_in - 1
         
